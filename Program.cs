@@ -28,7 +28,10 @@
 //ImprimirValores(queries.TresLibrosDeJavaRecientes());
 
 //Tercer y Cuarto libro con más de 400 pag
-ImprimirValores(queries.TerceryCuartoLibroDeMas400Pag());
+//ImprimirValores(queries.TerceryCuartoLibroDeMas400Pag());
+
+//3 Primeros  libros filtrados con select
+ImrpimirValores(queries.TresPrimerosLibros());
 
 void ImprimirValores(IEnumerable<Book> listadelibros)
 {
