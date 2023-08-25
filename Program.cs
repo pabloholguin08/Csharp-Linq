@@ -16,7 +16,13 @@
 //Console.WriteLine($" Algún libro fue publicado en 2005?{queries.SiAlgunLibroDespues2005}");
 
 //Libros de Python
-ImprimirValores(queries.LibrosConPython());
+//ImprimirValores(queries.LibrosConPython());
+
+//Libros de java por nombre
+//ImprimirValores(queries.LibrosDeJavaAsc());
+
+//Libros que tienen más de 450 paginas de forma descendente
+ImprimirValores(queries.LibrosDeJavaDesc());
 
 void ImprimirValores(IEnumerable<Book> listadelibros)
 {

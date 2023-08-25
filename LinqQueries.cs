@@ -53,4 +53,14 @@ public class LinqQueries
         //Query Expresion
         //return from l in librosCollection where l.Categories.Contains("Python") select l;
     }
+
+     public IEnumerable<Book> LibrosDeJavaAsc()
+    {
+       return librosCollection.Where(p => p.Categories.Contains("Java").OrderBy(p=> p.Title));
+    }
+
+     public IEnumerable<Book> LibrosDeJavaDesc()
+    {
+       return librosCollection.Where(p => p.PageCount > 450).OrderByDescending(p=>p.PageCount);
+    }
 }
