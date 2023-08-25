@@ -32,4 +32,18 @@ public class LinqQueries
         //Query Expresion
         return from l in librosCollection where l.PageCount > 250 && l.Title.Contains("in Action") select l;
     }
+
+    public bool TodoslosLibrosconStatus()
+    {
+        //All, todos los datos cumplen la condición
+        return librosCollection.All(p=> p.Status!= string.Empty);
+    }
+
+    public bool SiAlgunLibroDespues2005()
+    {
+        //Any, algún elemento cumple la condición
+        return librosCollection.Any(p=> p.PublishedDate.Year == 2005);
+    }
+
+
 }
