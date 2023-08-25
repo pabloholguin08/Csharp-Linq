@@ -12,3 +12,4 @@ D:\Documentos\Cursos\Datos-Csharp-LINQ\curso-linq\obj\Debug\net8.0\refint\curso-
 D:\Documentos\Cursos\Datos-Csharp-LINQ\curso-linq\obj\Debug\net8.0\curso-linq.pdb
 D:\Documentos\Cursos\Datos-Csharp-LINQ\curso-linq\obj\Debug\net8.0\curso-linq.genruntimeconfig.cache
 D:\Documentos\Cursos\Datos-Csharp-LINQ\curso-linq\obj\Debug\net8.0\ref\curso-linq.dll
+D:\Documentos\Cursos\Datos-Csharp-LINQ\curso-linq\obj\Debug\net8.0\curso-linq.sourcelink.json

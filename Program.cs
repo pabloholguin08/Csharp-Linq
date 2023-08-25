@@ -1,10 +1,42 @@
 ﻿LinqQueries queries = new LinqQueries();
 
-ImprimirValores(queries.TodaLaColeccion());
+//Toda la colección
+//ImprimirValores(queries.TodaLaColeccion());
 
-void ImprimirValores(IEnumerable<Book> listadelibros){
+//Libros después del 2000
+//ImprimirValores(queries.LibrosDespuesdel20000());
+
+//Libros coon más de 250 pag y tienen en el titulo la palabra in action
+ImprimirValores(queries.LibrosConMasde250PagConPalabrasInAction());
+
+void ImprimirValores(IEnumerable<Book> listadelibros)
+{
     Console.WriteLine("{0,-60} {1,15} {2,15}\n", "Titulo", "N. Paginas", "Fecha Publicacion");
-    foreach(var item in listadelibros){
+    foreach (var item in listadelibros)
+    {
         Console.WriteLine("{0,-60} {1,15} {2,15}", item.Title, item.PageCount, item.PublishedDate.ToShortDateString());
     }
 }
+
+
+
+/*
+<code> 
+List<Animal> animales = new List<Animal>();
+        animales.Add(new Animal() { Nombre = "Hormiga", Color = "Rojo" });
+        animales.Add(new Animal() { Nombre = "Lobo", Color = "Gris" });
+        animales.Add(new Animal() { Nombre = "Elefante", Color = "Gris" });
+        animales.Add(new Animal() { Nombre = "Pantegra", Color = "Negro" });
+        animales.Add(new Animal() { Nombre = "Gato", Color = "Negro" });
+        animales.Add(new Animal() { Nombre = "Iguana", Color = "Verde" });
+        animales.Add(new Animal() { Nombre = "Sapo", Color = "Verde" });
+        animales.Add(new Animal() { Nombre = "Camaleon", Color = "Verde" });
+        animales.Add(new Animal() { Nombre = "Gallina", Color = "Blanco" });
+
+        List<char> vocales = new List<char>() { 'a', 'e', 'i', 'o', 'u' };        
+
+        List<Animal> result = animales.Where(x => x.Color.ToLower().Equals("verde") && vocales.Contains(x.Nombre.ToLower()[0])).ToList();
+
+        if (result.Any())
+            result.ForEach(x => Console.WriteLine(x.Nombre));
+*/
