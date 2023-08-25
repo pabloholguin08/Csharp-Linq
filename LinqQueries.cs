@@ -36,13 +36,13 @@ public class LinqQueries
     public bool TodoslosLibrosconStatus()
     {
         //All, todos los datos cumplen la condición
-        return librosCollection.All(p=> p.Status!= string.Empty);
+        return librosCollection.All(p => p.Status != string.Empty);
     }
 
     public bool SiAlgunLibroDespues2005()
     {
         //Any, algún elemento cumple la condición
-        return librosCollection.Any(p=> p.PublishedDate.Year == 2005);
+        return librosCollection.Any(p => p.PublishedDate.Year == 2005);
     }
 
     public IEnumerable<Book> LibrosConPython()
@@ -54,28 +54,48 @@ public class LinqQueries
         //return from l in librosCollection where l.Categories.Contains("Python") select l;
     }
 
-     public IEnumerable<Book> LibrosDeJavaAsc()
+    public IEnumerable<Book> LibrosDeJavaAsc()
     {
-       return librosCollection.Where(p => p.Categories.Contains("Java").OrderBy(p=> p.Title));
+        return librosCollection.Where(p => p.Categories.Contains("Java").OrderBy(p => p.Title));
     }
 
-     public IEnumerable<Book> LibrosDeJavaDesc()
+    public IEnumerable<Book> LibrosDeJavaDesc()
     {
-       return librosCollection.Where(p => p.PageCount > 450).OrderByDescending(p=>p.PageCount);
+        return librosCollection.Where(p => p.PageCount > 450).OrderByDescending(p => p.PageCount);
     }
 
     public IEnumerable<Book> TresLibrosDeJavaRecientes()
     {
-       return librosCollection.Where(p => p.Categories.Contains("Java").OrderByDescending(p => p.PublishedDate).Take(3));
+        return librosCollection.Where(p => p.Categories.Contains("Java").OrderByDescending(p => p.PublishedDate).Take(3));
     }
 
     public IEnumerable<Book> TerceryCuartoLibroDeMas400Pag()
     {
-       return librosCollection.Where(p => p.PageCount > 400).Take(4).Skip(2);
+        return librosCollection.Where(p => p.PageCount > 400).Take(4).Skip(2);
     }
 
     public IEnumerable<Book> TresPrimerosLibros()
     {
-       return librosCollection.Take(3).Select(p => new Book() {Title = p.Title, PageCount = p.PageCount});
+        return librosCollection.Take(3).Select(p => new Book() { Title = p.Title, PageCount = p.PageCount });
+    }
+
+    public int NumeroLibrosConPaginasEntre200y500()
+    {
+        return librosCollection.Where(p => p.PageCount >= 200 && p.PageCount <= 500).Count();
+    }
+
+    public long NumeroLibrosConPaginasEntre200y500()
+    {
+        return librosCollection.Where(p => p.PageCount >= 200 && p.PageCount <= 500).LongCount();
+        //return librosCollection.LongCount(p => p.PageCount >=200 && p.PageCount<=500);
+    }
+
+    public DateTime FechaDePublicacionMenor()
+    {
+        return librosCollection.Min(p => p.PublishedDate.ToShortDateString());
+    }
+
+    public int NumeroDePagLibroMayor(){
+        return librosCollection.Max(p => p.PageCount);
     }
 }

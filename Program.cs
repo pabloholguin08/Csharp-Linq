@@ -31,7 +31,16 @@
 //ImprimirValores(queries.TerceryCuartoLibroDeMas400Pag());
 
 //3 Primeros  libros filtrados con select
-ImrpimirValores(queries.TresPrimerosLibros());
+//ImrpimirValores(queries.TresPrimerosLibros());
+
+//Cantidad de libros con entre 200 y 500 paginas}
+//Console.WriteLine($"Cantidad de libros que tienen entre 200 y 500 pag. {queries.NumeroLibrosConPaginasEntre200y500()}");
+
+//Fecha de Publicación Menor
+//Console.WriteLine($"Fecha de Publicación menor: {queries.FechaDePublicacionMenor()}");
+
+//Numero de paginas del libro que más contiene
+Console.WriteLine($"Numero de paginas del libro que más contiene: {queries.NumeroDePagLibroMayor}");
 
 void ImprimirValores(IEnumerable<Book> listadelibros)
 {
