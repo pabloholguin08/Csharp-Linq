@@ -1,0 +1,14 @@
+D:\Documentos\Cursos\Datos-Csharp-LINQ\curso-linq\bin\Debug\net8.0\curso-linq.exe
+D:\Documentos\Cursos\Datos-Csharp-LINQ\curso-linq\bin\Debug\net8.0\curso-linq.deps.json
+D:\Documentos\Cursos\Datos-Csharp-LINQ\curso-linq\bin\Debug\net8.0\curso-linq.runtimeconfig.json
+D:\Documentos\Cursos\Datos-Csharp-LINQ\curso-linq\bin\Debug\net8.0\curso-linq.dll
+D:\Documentos\Cursos\Datos-Csharp-LINQ\curso-linq\bin\Debug\net8.0\curso-linq.pdb
+D:\Documentos\Cursos\Datos-Csharp-LINQ\curso-linq\obj\Debug\net8.0\curso-linq.GeneratedMSBuildEditorConfig.editorconfig
+D:\Documentos\Cursos\Datos-Csharp-LINQ\curso-linq\obj\Debug\net8.0\curso-linq.AssemblyInfoInputs.cache
+D:\Documentos\Cursos\Datos-Csharp-LINQ\curso-linq\obj\Debug\net8.0\curso-linq.AssemblyInfo.cs
+D:\Documentos\Cursos\Datos-Csharp-LINQ\curso-linq\obj\Debug\net8.0\curso-linq.csproj.CoreCompileInputs.cache
+D:\Documentos\Cursos\Datos-Csharp-LINQ\curso-linq\obj\Debug\net8.0\curso-linq.dll
+D:\Documentos\Cursos\Datos-Csharp-LINQ\curso-linq\obj\Debug\net8.0\refint\curso-linq.dll
+D:\Documentos\Cursos\Datos-Csharp-LINQ\curso-linq\obj\Debug\net8.0\curso-linq.pdb
+D:\Documentos\Cursos\Datos-Csharp-LINQ\curso-linq\obj\Debug\net8.0\curso-linq.genruntimeconfig.cache
+D:\Documentos\Cursos\Datos-Csharp-LINQ\curso-linq\obj\Debug\net8.0\ref\curso-linq.dll
