@@ -40,7 +40,15 @@
 //Console.WriteLine($"Fecha de Publicación menor: {queries.FechaDePublicacionMenor()}");
 
 //Numero de paginas del libro que más contiene
-Console.WriteLine($"Numero de paginas del libro que más contiene: {queries.NumeroDePagLibroMayor}");
+//Console.WriteLine($"Numero de paginas del libro que más contiene: {queries.NumeroDePagLibroMayor}");
+
+//Libro con menor numero de paginas
+//var book = queries.LibroConMenorNumerodePaginas();
+//Console.WriteLine($"Libro con menos paginas: {book.Title} - {book.PageCount}");
+
+//Libro más reciente
+var book = queries.LibroConFechaPublicacionMasReciente();
+Console.WriteLine($"Libro más reciente: {book.Title} - {book.PublishedDate.ToShortDateString()}");
 
 void ImprimirValores(IEnumerable<Book> listadelibros)
 {

@@ -95,7 +95,24 @@ public class LinqQueries
         return librosCollection.Min(p => p.PublishedDate.ToShortDateString());
     }
 
-    public int NumeroDePagLibroMayor(){
+    public int NumeroDePagLibroMayor()
+    {
         return librosCollection.Max(p => p.PageCount);
+    }
+
+    public Book LibroConMenorNumerodePaginas()
+    {
+        return librosCollection.Where(p => p.PageCount > 0).MinBy(p => p.PageCount);
+    }
+
+    public Book LibroConFechaPublicacionMasReciente()
+    {
+        return librosCollection.MaxBy(p => p.PublishedDate);
+
+        /*
+        public Book? recentPublishDateBook(IEnumerable<Book> books){
+        return books.MaxBy(b=>b.PublishedDate) is null? new Book(): books.MaxBy(b=>b.PublishedDate);
+        }
+        */
     }
 }
