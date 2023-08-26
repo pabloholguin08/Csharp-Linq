@@ -56,6 +56,9 @@
 //Libros despues del 2015
 //Console.WriteLine(queries.TitulosDelLibroDespuesdel2O15());
 
+//Promedio de caracteres en titulos
+//Console.WriteLine($"El promedio de caracteres es: {queries.PromedioCaracteresTitulo()}");
+
 void ImprimirValores(IEnumerable<Book> listadelibros)
 {
     Console.WriteLine("{0,-60} {1,15} {2,15}\n", "Titulo", "N. Paginas", "Fecha Publicacion");
