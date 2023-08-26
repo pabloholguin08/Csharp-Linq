@@ -59,12 +59,55 @@
 //Promedio de caracteres en titulos
 //Console.WriteLine($"El promedio de caracteres es: {queries.PromedioCaracteresTitulo()}");
 
+//Libros por año después del 2000
+//ImprimirGrupo(queries.LibrosDespuesDel200AgrupadosPorAnio());
+
+//Diccionario de libros agrupados por primera Letra del titulo
+//var diccionarioLookup = queries.DiccionarioDeLibrosPorLetra();
+//ImprimirDiccionario(diccionarioLookup, 'A');
+
+//Libros filtrados con la clausula join
+ImprimirValores(queries.LibrosDespuesdel2005conMasde500Pags());
+
+
 void ImprimirValores(IEnumerable<Book> listadelibros)
 {
     Console.WriteLine("{0,-60} {1,15} {2,15}\n", "Titulo", "N. Paginas", "Fecha Publicacion");
     foreach (var item in listadelibros)
     {
         Console.WriteLine("{0,-60} {1,15} {2,15}", item.Title, item.PageCount, item.PublishedDate.ToShortDateString());
+    }
+}
+
+
+void ImprimirGrupo(IEnumerable<IGrouping<int,Book>> ListadeLibros)
+{
+    foreach(var grupo in ListadeLibros)
+    {
+        Console.WriteLine("");
+        Console.WriteLine($"Grupo: { grupo.Key }");
+        Console.WriteLine("{0,-60} {1, 15} {2, 15}\n", "Titulo", "N. Paginas", "Fecha publicacion");
+        foreach(var item in grupo)
+        {
+            Console.WriteLine("{0,-60} {1, 15} {2, 15}",item.Title,item.PageCount,item.PublishedDate.Date.ToShortDateString()); 
+        }
+    }
+}
+
+void ImprimirDiccionario(ILookup<char, Book> listadeLibros, char letra)
+{
+    char letterUpper = Char.ToUpper(letter);
+    if (listBooks[letterUpper].Count() == 0)
+    {
+        Console.WriteLine($"No hay libros que inicien con la letra '{letterUpper}'");
+    } 
+    else 
+    {
+        Console.WriteLine("{0, -60} {1, 15} {2, 15}\n", "Título", "Nro. Páginas", "Fecha de Publicación");
+        foreach (var book in listBooks[letterUpper])
+        {
+            Console.WriteLine("{0, -60} {1, 15} {2, 15}", book.Title, book.PageCount, book.PublishedDate.ToShortDateString());
+        }
     }
 }
 
@@ -90,3 +133,6 @@ List<Animal> animales = new List<Animal>();
         if (result.Any())
             result.ForEach(x => Console.WriteLine(x.Nombre));
 */
+
+
+

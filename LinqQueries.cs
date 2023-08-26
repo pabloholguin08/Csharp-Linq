@@ -56,7 +56,7 @@ public class LinqQueries
 
     public IEnumerable<Book> LibrosDeJavaAsc()
     {
-        return librosCollection.Where(p => p.Categories.Contains("Java").OrderBy(p => p.Title));
+        return librosCollection.Where(p => p.Categories.Contains("Java")).OrderBy(p => p.Title);
     }
 
     public IEnumerable<Book> LibrosDeJavaDesc()
@@ -66,7 +66,7 @@ public class LinqQueries
 
     public IEnumerable<Book> TresLibrosDeJavaRecientes()
     {
-        return librosCollection.Where(p => p.Categories.Contains("Java").OrderByDescending(p => p.PublishedDate).Take(3));
+        return librosCollection.Where(p => p.Categories.Contains("Java")).OrderByDescending(p => p.PublishedDate).Take(3);
     }
 
     public IEnumerable<Book> TerceryCuartoLibroDeMas400Pag()
@@ -84,7 +84,7 @@ public class LinqQueries
         return librosCollection.Where(p => p.PageCount >= 200 && p.PageCount <= 500).Count();
     }
 
-    public long NumeroLibrosConPaginasEntre200y500()
+    public long NumeroLibrosConPaginasEntre200y500n2()
     {
         return librosCollection.Where(p => p.PageCount >= 200 && p.PageCount <= 500).LongCount();
         //return librosCollection.LongCount(p => p.PageCount >=200 && p.PageCount<=500);
@@ -92,7 +92,7 @@ public class LinqQueries
 
     public DateTime FechaDePublicacionMenor()
     {
-        return librosCollection.Min(p => p.PublishedDate.ToShortDateString());
+        return librosCollection.Min(p => p.PublishedDate);
     }
 
     public int NumeroDePagLibroMayor()
@@ -137,7 +137,40 @@ public class LinqQueries
         });
     }
 
-    public double PromedioCaracteresTitulo(){
-        return librosCollection.Average(p=> p.Title.Lengnth);
+    public double PromedioCaracteresTitulo()
+    {
+        return librosCollection.Average(p => p.Title.Length);
+    }
+
+    public double PromedioNumeroPaginas()
+    {
+        return librosCollection.Where(p => p.PageCount > 0).Average(p => p.PageCount);
+    }
+
+    public IEnumerable<IGrouping<int, Book>> LibrosDespuesDel200AgrupadosPorAnio()
+    {
+        return librosCollection.Where(p => p.PublishedDate.Year > 2000).GroupBy(p => p.PublishedDate.Year);
+    }
+
+    public ILookup<char, Book> DiccionarioDeLibrosPorLetra()
+    {
+        return librosCollection.ToLookup(p => p.Title[0], p => p);
+    }
+
+    public IEnumerable<Book> LibrosDespuesdel2005conMasde500Pags()
+    {
+        var librosDespuesdel2005 = librosCollection.Where(p=> p.PublishedDate.Year> 2005);
+
+        var librosConMasde500Pags = librosCollection.Where(p=> p.PageCount>500);
+
+        return librosDespuesdel2005.Join(librosConMasde500Pags, p=> p.Title, x=> x.Title, (p,x) => p);
+
+        /*
+        var result = from booksAfter2005 in books 
+                 join booksPublishedAfter2005 in books
+                 on booksAfter2005.Title equals booksPublishedAfter2005.Title
+                 where booksAfter2005.PageCount >= 500 && booksPublishedAfter2005.PublishedDate.Year > 2005
+                 select booksAfter2005;
+        */
     }
 }
