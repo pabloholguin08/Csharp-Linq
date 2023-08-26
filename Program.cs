@@ -47,8 +47,14 @@
 //Console.WriteLine($"Libro con menos paginas: {book.Title} - {book.PageCount}");
 
 //Libro más reciente
-var book = queries.LibroConFechaPublicacionMasReciente();
-Console.WriteLine($"Libro más reciente: {book.Title} - {book.PublishedDate.ToShortDateString()}");
+//var book = queries.LibroConFechaPublicacionMasReciente();
+//Console.WriteLine($"Libro más reciente: {book.Title} - {book.PublishedDate.ToShortDateString()}");
+
+//La suma total de páginas de libros entre 0 y 500
+//Console.WriteLine($"Suma total de paginas: {queries.SumaPaginasLibrosEntr0y500()}");
+
+//Libros despues del 2015
+//Console.WriteLine(queries.TitulosDelLibroDespuesdel2O15());
 
 void ImprimirValores(IEnumerable<Book> listadelibros)
 {
